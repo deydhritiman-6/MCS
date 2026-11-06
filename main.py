@@ -12,12 +12,12 @@ facts_list = [
 
 
 def show_fact():
-  selected_fact = random.choice(facts_list)
-  facts_label.config(text=selected_fact)
+    selected_fact = random.choice(facts_list)
+    facts_label.config(text=selected_fact)
 
 
 app = tk.Tk()
-app.configure(bg="Light blue")
+app.configure(bg="light blue")
 app.geometry("400x300")
 app.title("Football Facts")
 
@@ -25,10 +25,9 @@ title_label = tk.Label(
     app,
     text="Random Football Facts",
     font=("Arial", 16, "bold"),
-    bg="Blue",
+    bg="light blue",
     fg="#333333",
 )
-
 title_label.pack(pady=20)
 
 facts_label = tk.Label(
@@ -37,9 +36,8 @@ facts_label = tk.Label(
     font=("Arial", 11),
     wraplength=350,
     justify="center",
-    bg="Light blue",
+    bg="light blue",
 )
-
 facts_label.pack(pady=20, padx=30)
 
 btn = tk.Button(
@@ -49,3 +47,6 @@ btn = tk.Button(
     bg="#ffffff",
     command=show_fact,
 )
+btn.pack(pady=10)  # this was missing, so the button never appeared
+
+app.mainloop()  # this was missing, so the window never stayed open
